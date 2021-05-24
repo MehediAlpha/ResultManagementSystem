@@ -17,22 +17,22 @@ const Navbar = ({onRoute}) => {
                     <ul className="navbar-nav mr-auto">
                         <Link to="/profile">
                             <li className="nav-item white">
-                                <a className="nav-link active grow mr3" style={{textDecoration:"none"}} href="#0">Profile</a>
+                                <button className="nav-link active grow mr3 bg-transparent b--transparent" style={{textDecoration:"none"}} >Profile</button>
                             </li>
                         </Link>
                         <Link to="/allresult">
                             <li className="nav-item">
-                                <a className="nav-link active grow mr3" href="#0">All Result</a>
+                                <button className="nav-link active grow mr3 bg-transparent b--transparent" >All Result</button>
                             </li>
                         </Link>
                         <Link to="/individualresult">
                             <li className="nav-item">
-                                <a className="nav-link active grow mr3" href="#0">Individual Result</a>
+                                <button className="option nav-link active grow mr3 bg-transparent b--transparent" >Individual Result</button>
                             </li>
                         </Link>
                     </ul>
                     <div className="navbar-text ">
-                        <a className="nav-link signout grow" href="#0" onClick={()=>onRoute('signin')}>Sign Out</a>
+                        <button className="nav-link signout grow bg-transparent b--transparent"  onClick={()=>onRoute('signin')}>Sign Out</button>
                     </div>
                 </div>
             </nav>

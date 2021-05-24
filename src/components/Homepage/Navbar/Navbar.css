@@ -3,7 +3,9 @@
     font-weight: bold;
     font-size: large;
 }
-
+.option:hover{
+    color: red;
+}
 .signout{
     color: red !important;
     font-weight: bold;

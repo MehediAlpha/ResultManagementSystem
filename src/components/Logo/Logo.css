@@ -4,6 +4,10 @@
 	height: 150px;
 	width: 150px;;
 }
+.teacher{
+	display: flex;
+	align-items: right;
+}
 
 @media only screen and (max-width: 500px) {
 	.Tilt {

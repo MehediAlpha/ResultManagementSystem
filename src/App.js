@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import Signin from './components/Signin/Signin';
+import SigninT from './components/Teacher/Signin/Signin'
+import HomepageT from './components/Teacher/Homepage/Homepage'
 import Logo from './components/Logo/Logo'
 import './App.css';
 import Homepage from './components/Homepage/Homepage';
@@ -24,10 +26,19 @@ class App extends Component {
             this.state.route === 'signin'
             ? 
               <div>
-                <Logo/>
+                <Logo onRoute={this.onRouteChange}/>
                 <Signin onRoute={this.onRouteChange}/>
               </div>
-            : <Homepage onRoute={this.onRouteChange}/>
+            : 
+              this.state.route === 'teachersignin' 
+              ?
+                <SigninT onRoute={this.onRouteChange}/>
+              :
+                this.state.route === 'teacherHomepage'
+                ?
+                  <HomepageT onRoute={this.onRouteChange}/>
+                :
+                <Homepage onRoute={this.onRouteChange}/>
           }
         </div>
     );

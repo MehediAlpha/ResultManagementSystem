@@ -1,6 +1,10 @@
+legend{
+    font-family: Agency FB;
+    font-size: 30px;
+}
 .css{
 	width: 500px; 
-  margin-top: 5vh;
+    margin-top: 5vh;
 }
 .prticle{
   position: fixed;

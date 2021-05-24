@@ -9,7 +9,7 @@ const SignIn = ({onRoute}) => {
 		<main className="pa5 ba b--black dib br4 ma shadow-5 bg-white css">
 		  <div className="measure center">
 		    <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
-		      <legend className="f1 fw6 ph0 mh0 ttu black" style={{fontFamily: "Agency FB"}}>Sign In</legend>
+		      <legend className=" fw6 ph0 mh0 ttu black">Sign In as Teacher</legend>
 		      <div className="mt3">
 		        <label className="tl db fw6 lh-copy f3 black" htmlFor="id">ID</label>
 		        <input className="pa2 input-reset ba bg-white black hover-bg-black w-100 f4" type="text" name="id"  id="id"/>
@@ -20,11 +20,14 @@ const SignIn = ({onRoute}) => {
 		      </div>
 		    </fieldset>
 		    <div className="">
-		      <input className="b pa3 ph4 ba b--orange bg-orange white grow pointer f4 mt2" onClick={()=>onRoute('home')} type="submit" value="Sign in"/>
+		      <input className="b pa3 ph4 ba b--orange bg-orange white grow pointer f4 mt2" onClick={()=>onRoute('teacherHomepage')} type="submit" value="Sign in"/>
 		    </div>
-		    <div className="lh-copy mt3 grow">
+            <div className="lh-copy mt3 grow">
+		      <a href="#0" className="f4 black black hover-black " onClick={()=>onRoute('signin')}>Go Back!</a>
+		    </div>
+		    {/* <div className="lh-copy mt3 grow">
 		      <a href="#0" className="f4 black black hover-black">Reset your password?</a>
-		    </div>
+		    </div> */}
 			
 
 			<div>

@@ -13,11 +13,11 @@
 
 @media only screen and (max-width: 700px) {
   .css {
-    width: 400px;
+    width: 350px;
   }
 }
 @media only screen and (max-width: 500px) {
   .css {
-    width: 350px;
+    width: 300px;
   }
 }

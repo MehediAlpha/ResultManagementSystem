@@ -5,14 +5,14 @@ import './Logo.css'
 
 const Logo = ({onRoute}) => {
 	return(
-		<div className='ma4 pd '>
+		<div className='ma4 pd flex justify-between'>
 			<Tilt className="Tilt br2 shadow-5 ba b--black" options={{ max : 100 }} >
 				 <div className="Tilt-inner pa3" >
 				 	<img alt='BloodLogo' src={studentLogo}/> 
 				 </div>
 			</Tilt>
 			<div className="teacher">
-		      <input className="b pa3 ph4 ba b--orange bg-orange white grow pointer f4 mt2 " onClick={()=>onRoute('teachersignin')} type="submit" value="I'm a teacher"/>
+		      <input className="b pa2 ph4 b--dark-gray bg-dark-gray white grow pointer f4 mt2 " onClick={()=>onRoute('teachersignin')} type="submit" value="I'm a TEACHER"/>
 		    </div>
 		</div>
 	);

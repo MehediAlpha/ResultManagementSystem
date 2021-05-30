@@ -20,14 +20,19 @@ const Navbar = ({onRoute}) => {
                                 <button className="nav-link active grow mr3 bg-transparent b--transparent" style={{textDecoration:"none"}} >Profile</button>
                             </li>
                         </Link>
+                        <Link to="/CurrentSemester">
+                            <li className="nav-item">
+                                <button className="option nav-link active grow mr3 bg-transparent b--transparent" >Current Semester</button>
+                            </li>
+                        </Link>
+                        <Link to="/PreviousSemester">
+                            <li className="nav-item">
+                                <button className="option nav-link active grow mr3 bg-transparent b--transparent" >Previous Semester</button>
+                            </li>
+                        </Link>
                         <Link to="/allresult">
                             <li className="nav-item">
                                 <button className="nav-link active grow mr3 bg-transparent b--transparent" >All Result</button>
-                            </li>
-                        </Link>
-                        <Link to="/individualresult">
-                            <li className="nav-item">
-                                <button className="option nav-link active grow mr3 bg-transparent b--transparent" >Individual Result</button>
                             </li>
                         </Link>
                     </ul>

@@ -30,11 +30,7 @@ const Navbar = ({onRoute}) => {
                                 <button className="option nav-link active grow mr3 bg-transparent b--transparent" >Previous Semester</button>
                             </li>
                         </Link>
-                        <Link to="/allresult">
-                            <li className="nav-item">
-                                <button className="nav-link active grow mr3 bg-transparent b--transparent" >All Result</button>
-                            </li>
-                        </Link>
+                        
                     </ul>
                     <Link to="/Signin">
                         <div className="navbar-text ">

@@ -7,14 +7,14 @@ class ResultTable extends React.Component {
 
 	return(
         <tr className="stripe-dark">
-            <td className="f5 pa3 b">{semester}</td>
-            <td className="f5 pa3 b">{courseNo}</td>
-            <td className="f5 pa3 b">{courseTitle}</td>
-            <td className="f5 pa3 b">{outOfThirty}</td>
-            <td className="f5 pa3 b">{midterm}</td>
-            <td className="f5 pa3 b">{final}</td>
-            <td className="f5 pa3 b">{total}</td>
-            <td className="f5 pa3 b">{grade}</td>
+            <td className="f6 pa3 b">{semester}</td>
+            <td className="f6 pa3 b">{courseNo}</td>
+            <td className="f6 pa3 b">{courseTitle}</td>
+            <td className="f6 pa3 b">{outOfThirty}</td>
+            <td className="f6 pa3 b">{midterm}</td>
+            <td className="f6 pa3 b">{final}</td>
+            <td className="f6 pa3 b">{total}</td>
+            <td className="f6 pa3 b">{grade}</td>
         </tr>
 	);
 	}

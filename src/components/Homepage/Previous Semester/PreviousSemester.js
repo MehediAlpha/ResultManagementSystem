@@ -44,9 +44,7 @@ const SampleData = [
         grade: 'A+'
     }
 ]
-
-
-    
+  
 class PreviousSemester extends Component {
     
     constructor(){

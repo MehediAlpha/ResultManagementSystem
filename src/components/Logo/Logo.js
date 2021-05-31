@@ -12,7 +12,7 @@ const Logo = ({onRoute}) => {
 				 </div>
 			</Tilt>
 			<div className="teacher">
-		      <input className="b pa2 ph4 b--dark-gray bg-dark-gray white grow pointer f4 mt2 " onClick={()=>onRoute('teachersignin')} type="submit" value="I'm a TEACHER"/>
+		      <input className="b pa2 ph4 b--dark-gray bg-dark-gray white grow pointer f5 mt2 " onClick={()=>onRoute('teachersignin')} type="submit" value="I'm a TEACHER"/>
 		    </div>
 		</div>
 	);

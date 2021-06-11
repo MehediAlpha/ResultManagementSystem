@@ -3,46 +3,92 @@ import MediaQuery from 'react-responsive';
 import Particles from 'react-particles-js';
 import './Signin.css';
 
-const SignIn = ({onRoute}) => {
+class SignIn extends React.Component {
+
+	constructor(){
+		super();
+		this.state = {
+			signInID: "",
+			signInPassword: ""
+		}
+	}
+
+	onIDChange = (event) => {
+		this.setState({signInID: event.target.value})
+	}
 	
-	return(
-		<main className="pa5 ba b--black dib br4 ma shadow-5 bg-white css">
-		  <div className="measure center">
-		    <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
-		      <legend className="f1 fw6 ph0 mh0 ttu black" style={{fontFamily: "Agency FB"}}>Sign In</legend>
-		      <div className="mt3">
-		        <label className="tl db fw6 lh-copy f3 black" htmlFor="id">ID</label>
-		        <input className="pa2 input-reset ba bg-white black hover-bg-black w-100 f4" type="text" name="id"  id="id"/>
-		      </div>
-		      <div className="mv3">
-		        <label className="tl db fw6 lh-copy f3 black" htmlFor="password">Password</label>
-		        <input className="b pa2 input-reset ba bg-white black w-100 f4" type="password" name="password"  id="password"/>
-		      </div>
-		    </fieldset>
-		    <div className="">
-		      <input className="b pa3 ph4 ba b--orange bg-orange white grow pointer f4 mt2" onClick={()=>onRoute('home')} type="submit" value="Sign in"/>
-		    </div>
-		    <div className="lh-copy mt3 grow">
-		      <a href="#0" className="f4 black black hover-black">Reset your password?</a>
-		    </div>
-			
+	onPasswordChange = (event) => {
+		this.setState({signInPassword: event.target.value})
+	}
+	
+	onSubmitChange = (event) =>{
+		// console.log(this.state.signInID + this.state.signInPassword);
 
-			<div>
-				<MediaQuery maxDeviceWidth={1000} >
-					<Particles className='prticle' params={prticleMobile} />
-				</MediaQuery>
-				<MediaQuery minDeviceWidth={1000} maxDeviceWidth={1600}>
-					<Particles className='prticle' params={prticleTab} />
-				</MediaQuery>
-				<MediaQuery minDeviceWidth={1600}>
-					<Particles className='prticle' params={prticlePC} />
-				</MediaQuery>
-			</div>
+		fetch('http://localhost:3001/signin', {
+			method: 'post',
+			headers: {'content-type' : 'application/json',
+						'Accept': 'application/json'},
+			body: JSON.stringify({
+				id : this.state.signInID,
+				password : this.state.signInPassword
+			})
+		})
+		.then(response => response.json())
+		.then(data =>{
+			if(data === 'Wrong ID'){
+				alert('ID not found');
+			}else if(data === 'Error Login in'){
+				alert('Password does not matched !');
+			}
+			else{
+				this.props.onRoute('home');
+			}
+		})
 
-		  </div>
-		</main>
 
-	);
+		//this.props.onRoute('home');
+	}
+
+	render(){
+		return(
+			<main className="pa5 ba b--black dib br4 ma shadow-5 bg-white css">
+			  <div className="measure center">
+				<fieldset id="sign_up" className="ba b--transparent ph0 mh0">
+				  <legend className="f1 fw6 ph0 mh0 ttu black" style={{fontFamily: "Agency FB"}}>Sign In</legend>
+				  <div className="mt3">
+					<label className="tl db fw6 lh-copy f3 black" htmlFor="id">ID</label>
+					<input onChange = {this.onIDChange} className="pa2 input-reset ba bg-white black hover-bg-black w-100 f4" type="text" name="id"  id="id"/>
+				  </div>
+				  <div className="mv3">
+					<label className="tl db fw6 lh-copy f3 black" htmlFor="password">Password</label>
+					<input onChange = {this.onPasswordChange} className="b pa2 input-reset ba bg-white black w-100 f4" type="password" name="password"  id="password"/>
+				  </div>
+				</fieldset>
+				<div className="">
+				  <input onClick={this.onSubmitChange}  className="b pa3 ph4 ba b--orange bg-orange white grow pointer f4 mt2" type="submit" value="Sign in"/>
+				</div>
+				<div className="lh-copy mt3 grow">
+				  <a href="#0" className="f4 black black hover-black">Reset your password?</a>
+				</div>
+				
+	
+				<div>
+					<MediaQuery maxDeviceWidth={1000} >
+						<Particles className='prticle' params={prticleMobile} />
+					</MediaQuery>
+					<MediaQuery minDeviceWidth={1000} maxDeviceWidth={1600}>
+						<Particles className='prticle' params={prticleTab} />
+					</MediaQuery>
+					<MediaQuery minDeviceWidth={1600}>
+						<Particles className='prticle' params={prticlePC} />
+					</MediaQuery>
+				</div>
+	
+			  </div>
+			</main>
+		);
+	}
+
 }
 
 const prticlePC ={

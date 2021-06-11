@@ -16,6 +16,7 @@ const Homepage = ({onRoute}) => {
                     <Route path='/profile' component={Profile}/>
                     <Route path='/CurrentSemester' component={CurrentSemester}/>
                     <Route path='/PreviousSemester' component={PreviousSemester}/>
+                    <Route path='/' > <Profile/> </Route>
                 </Switch>
             </div>
         </Router>

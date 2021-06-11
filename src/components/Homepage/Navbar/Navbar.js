@@ -30,9 +30,8 @@ const Navbar = ({onRoute}) => {
                                 <button className="option nav-link active grow mr3 bg-transparent b--transparent" >Previous Semester</button>
                             </li>
                         </Link>
-                        
                     </ul>
-                    <Link to="/Signin">
+                    <Link to="/">
                         <div className="navbar-text ">
                             <button className="nav-link signout grow bg-transparent b--transparent"  onClick={()=>onRoute('signin')}>Sign Out</button>
                         </div>

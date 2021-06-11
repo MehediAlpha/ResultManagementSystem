@@ -7,7 +7,7 @@ const CurrentSemester = () => {
             <h3 className="">Spring 2021</h3>
                 <div className="pa2">
                     <div className="overflow-auto">
-                        <table className="f6 w-100 center" cellspacing="0">
+                        <table className="f6 w-100 center" cellSpacing="0">
                         <thead>
                             <tr className="stripe-dark">
                                 <th className="f4 pa3 bg-dark-gray white">Course No</th>

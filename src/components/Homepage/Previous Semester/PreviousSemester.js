@@ -49,8 +49,17 @@ class PreviousSemester extends Component {
     
     constructor(){
         super();
+        fetch('http://localhost:3001/semesterresult', {
+			method: 'get',
+			headers: {'content-type' : 'application/json',
+						'Accept': 'application/json'}
+		})
+		.then(response => response.json())
+		.then(data =>{
+            this.setState({resultList : data})
+		});
         this.state = {
-            resultList : SampleData,
+            resultList : [],
             semester: '',
             courseNo: '', 
             courseTitle: ''
@@ -70,15 +79,16 @@ class PreviousSemester extends Component {
 	}
 
     render(){
+        
         let filteredUserList = this.state.resultList.filter(resultlist =>{
             return ( resultlist.semester.toLowerCase().includes(this.state.semester.toLowerCase()) &&
-                resultlist.courseNo.toLowerCase().includes(this.state.courseNo.toLowerCase()) &&
-                resultlist.courseTitle.toLowerCase().includes(this.state.courseTitle.toLowerCase())
+                resultlist.c_id.toLowerCase().includes(this.state.courseNo.toLowerCase()) &&
+                resultlist.c_title.toLowerCase().includes(this.state.courseTitle.toLowerCase())
             );
         });
         return(
             <div>
-                <h1>Previous Semester</h1>
+                <h1>All Semester</h1>
                 <ResultSearch changeSemester = {this.onChangeSemester} changeCourseNo = {this.onChangeCourseNo} changeCourseTitle = {this.onChangeCourseTitle}/>
                 <ResultList result = {filteredUserList} />
             </div>

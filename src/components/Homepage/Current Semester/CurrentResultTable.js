@@ -1,6 +1,6 @@
 import React from 'react';
 
-class ResultTable extends React.Component {
+class ResultData extends React.Component{
 
     gradeGenerator = (a, b, c) => {
         if (a+b+c >= 80){
@@ -33,15 +33,13 @@ class ResultTable extends React.Component {
         else {
             return 'F';
         }
+        
     }
 
-
-	render(){
-        const {c_id, c_title, thirty, mid, final, t_name, semester} = this.props.result;
-
-	return(
-        <tr className="stripe-dark">
-                <td className="f6 pa3 b">{semester}</td>
+    render(){
+        const {c_id, c_title, thirty, mid, final, t_name} = this.props.result;
+        return(
+            <tr className="stripe-dark">
                 <td className="f6 pa3 b">{c_id}</td>
                 <td className="f6 pa3 b">{c_title}</td>
                 <td className="f6 pa3 b">{thirty}</td>
@@ -50,10 +48,9 @@ class ResultTable extends React.Component {
                 <td className="f6 pa3 b">{mid+thirty+final}</td>
                 <td className="f6 pa3 b">{this.gradeGenerator(thirty, mid, final)}</td>
                 <td className="f6 pa3 b">{t_name}</td>
-        </tr>
-	);
-	}
-	
+            </tr>
+        )
+    }
 }
 
-export default ResultTable;
+export default ResultData;

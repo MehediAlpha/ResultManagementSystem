@@ -27,7 +27,7 @@ const Navbar = ({onRoute}) => {
                         </Link>
                         <Link to="/PreviousSemester">
                             <li className="nav-item">
-                                <button className="option nav-link active grow mr3 bg-transparent b--transparent" >Previous Semester</button>
+                                <button className="option nav-link active grow mr3 bg-transparent b--transparent" >All Semester</button>
                             </li>
                         </Link>
                     </ul>

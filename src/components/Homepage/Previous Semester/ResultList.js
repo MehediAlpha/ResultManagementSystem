@@ -8,7 +8,7 @@ const ResultList = ({result}) => {
     });
 
 	return(
-        <div className="overflow-auto">
+        <div className="overflow-auto br3">
             <table className="f6 w-100 center" cellSpacing="0">
                 <thead>
                     <tr className="stripe-dark">

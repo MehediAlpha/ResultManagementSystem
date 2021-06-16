@@ -1,49 +1,6 @@
 import React, {Component} from 'react';
 import ResultSearch from './Result Search/ResultSearch';
 import ResultList from './ResultList'
-
-const SampleData = [
-    {
-        semester : 'Spring 2020',
-        courseNo: 'CSE 101',
-        courseTitle: 'Computer Fundamentals',
-        outOfThirty: 28,
-        midterm: 28,
-        final: 38,
-        total: 94,
-        grade: 'A+'
-    },
-    {
-        semester : 'Spring 2020',
-        courseNo: 'CSE 102',
-        courseTitle: 'Computer Fundamentals Lab',
-        outOfThirty: 25,
-        midterm: 25,
-        final: 30,
-        total: 80,
-        grade: 'A+'
-    },
-    {
-        semester : 'Summer 2020',
-        courseNo: 'CSE 201',
-        courseTitle: 'Computer Programming',
-        outOfThirty: 28,
-        midterm: 28,
-        final: 38,
-        total: 94,
-        grade: 'A+'
-    },
-    {
-        semester : 'Summer 2020',
-        courseNo: 'CSE 202',
-        courseTitle: 'Computer Programming Lab',
-        outOfThirty: 25,
-        midterm: 25,
-        final: 30,
-        total: 80,
-        grade: 'A+'
-    }
-]
   
 class PreviousSemester extends Component {
     
@@ -56,11 +13,13 @@ class PreviousSemester extends Component {
 		})
 		.then(response => response.json())
 		.then(data =>{
+            console.log(data);
             this.setState({resultList : data})
+            console.log('2');
 		});
         this.state = {
             resultList : [],
-            semester: '',
+                 semester: '',
             courseNo: '', 
             courseTitle: ''
         }
@@ -81,13 +40,17 @@ class PreviousSemester extends Component {
     render(){
         
         let filteredUserList = this.state.resultList.filter(resultlist =>{
-            return ( resultlist.semester.toLowerCase().includes(this.state.semester.toLowerCase()) &&
-                resultlist.c_id.toLowerCase().includes(this.state.courseNo.toLowerCase()) &&
-                resultlist.c_title.toLowerCase().includes(this.state.courseTitle.toLowerCase())
-            );
+            console.log('a ' + this.state.resultList);      
+            return (  
+                            resultlist.semester.toLowerCase().includes(this.state.semester.toLowerCase()) &&
+                            resultlist.c_id.toLowerCase().includes(this.state.courseNo.toLowerCase()) &&
+                            resultlist.c_title.toLowerCase().includes(this.state.courseTitle.toLowerCase())
+                        );
+
         });
+
         return(
-            <div>
+            <div className="pa3">
                 <h1>All Semester</h1>
                 <ResultSearch changeSemester = {this.onChangeSemester} changeCourseNo = {this.onChangeCourseNo} changeCourseTitle = {this.onChangeCourseTitle}/>
                 <ResultList result = {filteredUserList} />

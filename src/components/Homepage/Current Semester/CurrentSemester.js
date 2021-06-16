@@ -1,9 +1,8 @@
 import React from 'react';
 import CurrentResultList from './CurrentResultList';
 
-
-
 class CurrentSemester extends React.Component {
+    
     constructor(){
         super();
         fetch('http://localhost:3001/currentsemesterresult', {
@@ -25,10 +24,10 @@ class CurrentSemester extends React.Component {
     render(){
         return(
             <div>
-                <h1>Current Semester</h1>
-                <h3 className="">Spring 2021</h3>
+                <h1 className="b f2">Current Semester</h1>
+                <h3 className="b">Summer 2021</h3>
                     <div className="pa2">
-                         <CurrentResultList result = {this.state.info} />
+                         <CurrentResultList result = {this.state.info}/>
                     </div>
             </div>
         )

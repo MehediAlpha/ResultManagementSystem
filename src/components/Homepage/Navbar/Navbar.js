@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom';
 const Navbar = ({onRoute}) => {
     return(
         <div>
-            <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+            <nav className="navbar navbar-expand-lg navbar-light bg-light">
                 <a href="#0">
                     <img src={studentLogo} className="w2 bg-white ml4 mr5" alt="Site Name"/>
                 </a>
@@ -16,24 +16,24 @@ const Navbar = ({onRoute}) => {
                 <div className="collapse navbar-collapse" id="navbarText">
                     <ul className="navbar-nav mr-auto">
                         <Link to="/profile">
-                            <li className="nav-item white">
-                                <button className="nav-link active grow mr3 bg-transparent b--transparent" style={{textDecoration:"none"}} >Profile</button>
+                            <li className="navbar-text br3 bg-orange ml2 pl2 grow">
+                                <button className="nav-link active mr2 bg-transparent b--transparent" style={{textDecoration:"none"}} >Profile</button>
                             </li>
                         </Link>
-                        <Link to="/CurrentSemester">
-                            <li className="nav-item">
-                                <button className="option nav-link active grow mr3 bg-transparent b--transparent" >Current Semester</button>
+                        {/* <Link to="/CurrentSemester"> 
+                            <li className="navbar-text br3 bg-orange ml2 pl2 grow">
+                                <button className="option nav-link active mr2 bg-transparent b--transparent" >Current Semester</button>
                             </li>
-                        </Link>
+                        </Link> */}
                         <Link to="/PreviousSemester">
-                            <li className="nav-item">
-                                <button className="option nav-link active grow mr3 bg-transparent b--transparent" >All Semester</button>
+                            <li className="navbar-text br3 bg-orange ml2 pl2 grow">
+                                <button className="option nav-link active mr2 bg-transparent b--transparent" >All Semester</button>
                             </li>
                         </Link>
                     </ul>
                     <Link to="/">
-                        <div className="navbar-text ">
-                            <button className="nav-link signout grow bg-transparent b--transparent"  onClick={()=>onRoute('signin')}>Sign Out</button>
+                        <div className="navbar-text ml3 pl3 grow">
+                            <button className="nav-link signout grow red bg-transparent b--transparent"  onClick={()=>onRoute('signin')}>Sign Out</button>
                         </div>
                     </Link>
                 </div>

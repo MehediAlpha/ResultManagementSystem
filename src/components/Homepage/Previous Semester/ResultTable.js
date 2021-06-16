@@ -2,32 +2,32 @@ import React from 'react';
 
 class ResultTable extends React.Component {
 
-    gradeGenerator = (a, b, c) => {
-        if (a+b+c >= 80){
+    gradeGenerator = (grade) => {
+        if (parseFloat(grade) === 4.00){
             return 'A+';
         }
-        else if (a+b+c >= 75){
+        else if (parseFloat(grade) === 3.75){
             return 'A';
         }
-        else if (a+b+c >= 70){
+        else if (parseFloat(grade) === 3.50){
             return 'A-';
         }
-        else if (a+b+c >= 65){
+        else if (parseFloat(grade) === 3.25){
             return 'B+';
         }
-        else if (a+b+c >= 60){
+        else if (parseFloat(grade) === 3.00){
             return 'B+';
         }
-        else if (a+b+c >= 55){
+        else if (parseFloat(grade) === 2.75){
             return 'B-';
         }
-        else if (a+b+c >= 50){
+        else if (parseFloat(grade) === 2.50){
             return 'C+';
         }
-        else if (a+b+c >= 45){
+        else if (parseFloat(grade) === 2.25){
             return 'C';
         }
-        else if (a+b+c >= 40){
+        else if (parseFloat(grade) === 2.00){
             return 'D';
         }
         else {
@@ -37,7 +37,7 @@ class ResultTable extends React.Component {
 
 
 	render(){
-        const {c_id, c_title, thirty, mid, final, t_name, semester} = this.props.result;
+        const {c_id, c_title, thirty, mid, final, t_name, semester, totalmark, grade} = this.props.result;
 
 	return(
         <tr className="stripe-dark">
@@ -47,8 +47,8 @@ class ResultTable extends React.Component {
                 <td className="f6 pa3 b">{thirty}</td>
                 <td className="f6 pa3 b">{mid}</td>
                 <td className="f6 pa3 b">{final}</td>
-                <td className="f6 pa3 b">{mid+thirty+final}</td>
-                <td className="f6 pa3 b">{this.gradeGenerator(thirty, mid, final)}</td>
+                <td className="f6 pa3 b">{totalmark}</td>
+                <td className="f6 pa3 b">{this.gradeGenerator(grade)}</td>
                 <td className="f6 pa3 b">{t_name}</td>
         </tr>
 	);

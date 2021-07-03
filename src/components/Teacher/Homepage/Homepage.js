@@ -1,15 +1,23 @@
 import React from 'react';
+import Navbar from './NavbarTeacher/Navbar';
+import Profile from './Profile/Profile';
+import MarkEntry from './MarkEntry/MarkEntry';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+
 
 const Homepage = ({onRoute}) => {
     return (
-        <div>
-            <div className="">
-		      <input className="b pa3 ph4 ba b--orange bg-orange white grow pointer f4 mt2" onClick={()=>onRoute('teachersignin')} type="submit" value="Go Back"/>
-		    </div>
-            <h1>Hello, Teacher</h1>
-            <p>Page under Construction</p>
-        </div>
-      
+        <Router>
+            <div className="hompage">
+                <Navbar onRoute={onRoute}/>
+                <Switch>
+                    <Route path='/profile' component={Profile} />
+                    {/* <Route path='/CurrentSemester' component={CurrentSemester}/> */}
+                    <Route path='/markentry' component={MarkEntry}/>
+                    <Route path='/' > <Profile/> </Route>
+                </Switch>
+            </div>
+        </Router>
     );
   
 }

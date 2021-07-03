@@ -12,7 +12,7 @@ const CurrentResultList = ({result}) => {
             <table className="f6 w-100 center" cellSpacing="0">
                 <thead>
                     <tr className="stripe-dark">
-                        <th className="f5 pa3 bg-dark-gray white">Course No</th>
+                        <th className="f5 pa3 bg-dark-gray white">Course Code</th>
                         <th className="f5 pa3 bg-dark-gray white">Course Title</th>
                         <th className="f5 pa3 bg-dark-gray white">Out of 30</th>
                         <th className="f5 pa3 bg-dark-gray white">Midterm</th>

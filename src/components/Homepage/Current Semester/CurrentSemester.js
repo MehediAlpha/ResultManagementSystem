@@ -25,7 +25,7 @@ class CurrentSemester extends React.Component {
         return(
             <div>
                 <h1 className="b f2">Current Semester</h1>
-                <h3 className="b">Summer 2021</h3>
+                <h3 className="b">Spring 2021</h3>
                     <div className="pa2">
                          <CurrentResultList result = {this.state.info}/>
                     </div>

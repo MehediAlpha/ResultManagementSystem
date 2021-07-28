@@ -1,23 +1,35 @@
-.css{
-	width: 500px; 
-  margin-top: 5vh;
+.css {
+	width: 500px;
+	margin-top: 5vh;
 }
-.prticle{
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  z-index: -1;
+.prticle {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	z-index: -1;
+}
+
+.popup-content {
+	width: 100%;
+	margin: auto;
+	background: rgb(255, 99, 0);
+	background: linear-gradient(
+		90deg,
+		rgba(255, 99, 0, 0.5) 0%,
+		rgba(255, 0, 0, 0.5) 100%
+	) !important;
+	border: none !important;
 }
 
 @media only screen and (max-width: 700px) {
-  .css {
-    width: 400px;
-  }
+	.css {
+		width: 400px;
+	}
 }
 @media only screen and (max-width: 500px) {
-  .css {
-    width: 350px;
-  }
+	.css {
+		width: 350px;
+	}
 }

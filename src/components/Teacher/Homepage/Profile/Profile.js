@@ -56,21 +56,35 @@ class Profile extends React.Component {
 
         fetch('http://localhost:3001/enrollList', {
 			method: 'post',
-			headers: {'content-type' : 'application/json',
-						'Accept': 'application/json'},
+			headers: {
+                'content-type' : 'application/json',
+				'Accept': 'application/pdf',
+                'action' : 'pdfMake/pdf'},
 			body: JSON.stringify({
 				courseID : course_id
 			})
 		})
-		.then(response => response.json())
-		
-
+		.then(res => res.blob())
+        .then(response => {
+            //Create a Blob from the PDF Stream
+            console.log(response);
+            const file = new Blob([response], {
+            type: "application/pdf"
+            });
+            //Build a URL from the file
+            const fileURL = URL.createObjectURL(file);
+            //Open the URL on new Window
+            window.open(fileURL);
+        })
+        .catch(error => {
+            console.log(error);
+        });
 
     }
 
     render(){
         return(
-        <div className="padding">  
+        <div className="padding bg-light-gray">  
             <h1 className="b f2">Profile</h1>
             <div className="page-content page-container" id="page-content">
                 <div >
@@ -132,7 +146,7 @@ class Profile extends React.Component {
 
             <div>
                 <h1 className="b f2">Current Semester Course</h1>
-                <h3 className="b">Summer 2021</h3>
+                <h3 className="b">Spring 2021</h3>
                     <div className="pa2">
                         <CurrentCourseList course = {this.state.course} downloadPDF = {this.downloadPDF}/>
                     </div>

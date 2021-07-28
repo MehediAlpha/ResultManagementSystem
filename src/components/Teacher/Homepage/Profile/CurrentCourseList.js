@@ -3,6 +3,7 @@ import TableData from './TableData';
 
 
 const CurrentCourseList = ({course , downloadPDF}) => {
+    
 	const resultlist = course.map((data, i) =>{
         return <TableData key={i} course = {course[i]} downloadPDF = {downloadPDF} />
     });

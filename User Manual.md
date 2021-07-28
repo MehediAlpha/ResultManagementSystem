@@ -1,4 +1,5 @@
-# User Manual
+# User Manual for Result Management System
+By team Alpha
 
 ## Student Manual
 Here are some instructions about our system for student. With these instructions, a student can easily use our ‘Result Management System’. 
